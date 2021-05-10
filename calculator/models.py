@@ -2,8 +2,12 @@ from django.db import models
 
 # Create your models here.
 class Weight(models.Model):
+    CHOOSE_WEIGHT=(
+        ('kg','KG'),
+        ('pound','POUND')
+    )
     weight_range=models.CharField(max_length=20, unique=True)
-    weight_measure=models.CharField(max_length=20, unique=True)
+    weight_measure=models.CharField(max_length=20, choices=CHOOSE_WEIGHT, default='kg')
 
     def __str__(self):
         return f"{self.weight_range} / {self.weight_measure}"
@@ -12,8 +16,12 @@ class Weight(models.Model):
         super().save(*args, **kwargs)
 
 class Height(models.Model):
+    CHOOSE_HEIGHT=(
+        ('ft',"FT"),
+        ('inch','INCH')
+    )
     height_range=models.CharField(max_length=20, unique=True)
-    height_measure=models.CharField(max_length=20, unique=True)
+    height_measure=models.CharField(max_length=20, choices=CHOOSE_HEIGHT, default='ft')
 
     
     def __str__(self):

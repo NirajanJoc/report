@@ -6,8 +6,8 @@
 
     <label class="logo">BMI Calculate</label>
     <ul>
-        <li><a class="active" href="#" >Home</a></li>
-        <li><a href="#">My Records</a></li>
+        <li><a class="active" href="{% url 'calculator:dashboard' %}" >Home</a></li>
+        <li><a href="{% url 'calculator:records' %}">My Records</a></li>
         <li><a href="#">Calculate</a></li>
         <li><a href="#">Logout</a></li>
     </ul>
