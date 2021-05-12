@@ -5,4 +5,22 @@
 {% endblock navbar %}
 {% block content %}
 <h1 style="text-align: center;">My Records</h1>
+
+<table class="table table-striped"> 
+    <tr>
+        <th>USER</th>
+        <th>WEIGHT</th>
+        <th>HEIGHT</th>
+        <th>DELETE</th>
+    </tr>
+    {% for form in forms %}
+    <tr>
+        <td>{{ form.user }}</td>
+        <td>{{ form.weight }}</td>
+        <td>{{ form.height }}</td>
+        <td><a href="{% url 'calculator:delete_data' form.id %}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
 {% endblock content %}

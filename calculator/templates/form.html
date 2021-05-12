@@ -5,7 +5,8 @@
 {% endblock navbar %}
 {% block content %}
 <h3 style="text-align: center;">Calculate </h3>
-<form action="{% url 'calculator:result' %}" method="POST">
+<!-- action="{% url 'calculator:result' %}" -->
+<form  method="POST" >
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Calculate" name='submit'>

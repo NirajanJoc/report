@@ -1,0 +1,6 @@
+<form >
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Register" >
+</form>
+<button><a href="{% url 'user:login' %}">Login</a></button>
